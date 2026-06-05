@@ -1,0 +1,70 @@
+{
+  "kind": "collectionType",
+  "collectionName": "proyectos",
+  "info": {
+    "singularName": "proyecto",
+    "pluralName": "proyectos",
+    "displayName": "Proyecto"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "nombre",
+      "required": true
+    },
+    "descripcionBreve": {
+      "type": "string",
+      "required": true
+    },
+    "descripcionCompleta": {
+      "type": "text"
+    },
+    "imagen": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "tipo": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "academico",
+        "personal",
+        "laboral",
+        "simulado"
+      ]
+    },
+    "tecnologias": {
+      "type": "json"
+    },
+    "repoUrl": {
+      "type": "string"
+    },
+    "demoUrl": {
+      "type": "string"
+    },
+    "destacado": {
+      "type": "boolean",
+      "default": false
+    },
+    "programadores": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::programador.programador",
+      "inversedBy": "proyectos"
+    }
+  }
+}
