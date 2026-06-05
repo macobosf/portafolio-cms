@@ -5,7 +5,11 @@ export default [
   {
     name: 'strapi::cors',
     config: {
-      origin: ['http://localhost:4200'],
+      origin: [
+        'http://localhost:4200',
+        'https://portafolio-54995.web.app',
+        'https://portafolio-54995.firebaseapp.com'
+      ],
       methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS', 'HEAD'],
       headers: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
       keepHeaderOnError: true,
